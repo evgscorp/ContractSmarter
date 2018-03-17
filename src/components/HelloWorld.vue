@@ -126,12 +126,12 @@ export default {
       account = accounts[0];
     });
           // Native form submission is not yet supported
-          axios.post('/api/submit', {
+        /*  axios.post('/api/submit', {
             name: this.name,
             email: this.email,
             docnumber: this.docnumber,
             checkbox: this.checkbox
-          })
+          })*/
         }
       },
       clear () {
