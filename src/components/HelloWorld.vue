@@ -137,7 +137,7 @@ console.log('accounts', accs);
     }).then(function() {
       console.log("Transaction complete!");
      vm.tcomplete=true;
-     vm.from.reset();
+     //vm.from.reset();
     
     }).catch(function(e) {
       console.log(e);
