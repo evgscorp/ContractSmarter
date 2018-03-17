@@ -9,7 +9,10 @@
   },
   "dependencies": {
     "vue": "^2.5.13",
-    "vuetify": "^1.0.8"
+    "vuetify": "^1.0.8",
+    "truffle-contract": "^1.1.11",
+    "web3": "^0.20.0",
+    "json-loader": "^0.5.4"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.0-beta.6",
