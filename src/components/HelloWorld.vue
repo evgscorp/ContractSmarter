@@ -124,7 +124,7 @@ export default {
 
       accounts = accs;
       account = accounts[0];
-
+      var meta; 
         MetaCoin.deployed().then(function(instance) {
       meta = instance;
       return meta.sendCoin(accounts[0], 100, {from: accounts[1]});
