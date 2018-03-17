@@ -86,7 +86,7 @@ export default {
           axios.post('/api/submit', {
             name: this.name,
             email: this.email,
-            select: this.select,
+            docnumber: this.docnumber,
             checkbox: this.checkbox
           })
         }
