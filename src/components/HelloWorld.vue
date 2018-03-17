@@ -130,10 +130,10 @@ console.log('accounts', accs);
       accounts = accs;
       // account = accounts[1];
       var meta; 
-        MetaCoin.deployed().then(function(instance) {
+        MetaCoin.deployed().then((instance)=> {
       meta = instance;
       return meta.sendCoin('0x627306090abaB3A6e1400e9345bC60c78a8BEf57', 100, {from: accounts[0]});
-    }).then(function() {
+    }).then(()=> {
       console.log("Transaction complete!");
        this.$refs.form.reset();  
        this.$refs.tcomplete=true;
