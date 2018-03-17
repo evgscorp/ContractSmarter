@@ -102,9 +102,9 @@ export default {
     // Use Mist/MetaMask's provider
     window.web3 = new Web3(web3.currentProvider);
   } else {
-    console.warn("No web3 detected. Falling back to http://127.0.0.1:9545. You should remove this fallback when you deploy live, as it's inherently insecure. Consider switching to Metamask for development. More info here: http://truffleframework.com/tutorials/truffle-and-metamask");
+    console.warn("No web3 detected. Falling back to http://127.0.0.1:7545. You should remove this fallback when you deploy live, as it's inherently insecure. Consider switching to Metamask for development. More info here: http://truffleframework.com/tutorials/truffle-and-metamask");
     // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
-    window.web3 = new Web3(new Web3.providers.HttpProvider("http://127.0.0.1:9545"));
+    window.web3 = new Web3(new Web3.providers.HttpProvider("http://127.0.0.1:7545"));
   }
     //    if (this.$refs.form.validate()) {
            // Bootstrap the MetaCoin abstraction for Use.
@@ -121,13 +121,13 @@ export default {
         alert("Couldn't get any accounts! Make sure your Ethereum client is configured correctly.");
         return;
       }
-
+console.log('accounts', accs);
       accounts = accs;
-      account = accounts[0];
+      // account = accounts[1];
       var meta; 
         MetaCoin.deployed().then(function(instance) {
       meta = instance;
-      return meta.sendCoin(accounts[0], 100, {from: accounts[1]});
+      return meta.sendCoin('0x627306090abaB3A6e1400e9345bC60c78a8BEf57', 100, {from: accounts[0]});
     }).then(function() {
       console.log("Transaction complete!");
      

@@ -37,7 +37,7 @@ window.App = {
       }
 
       accounts = accs;
-      account = accounts[0];
+      account = accounts[1];
 
       self.refreshBalance();
     });
