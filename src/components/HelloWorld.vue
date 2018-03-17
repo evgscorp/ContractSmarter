@@ -133,7 +133,7 @@ export default {
      
     }).catch(function(e) {
       console.log(e);
-      self.setStatus("Error sending coin; see log.");
+      //self.setStatus("Error sending coin; see log.");
     });
     });
           // Native form submission is not yet supported
