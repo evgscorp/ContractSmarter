@@ -132,11 +132,11 @@ console.log('accounts', accs);
       var meta; 
         MetaCoin.deployed().then((instance)=> {
       meta = instance;
-      return meta.sendCoin('0x627306090abaB3A6e1400e9345bC60c78a8BEf57', 100, {from: accounts[0]});
+      return meta.sendCoin('0x627306090abaB3A6e1400e9345bC60c78a8BEf57', 10, {from: accounts[0]});
     }).then(()=> {
       console.log("Transaction complete!");
-       this.$refs.form.reset();  
-       this.$refs.tcomplete=true;
+      // this.form.reset();  
+       this.tcomplete=true;
     
     }).catch(function(e) {
       console.log(e);
