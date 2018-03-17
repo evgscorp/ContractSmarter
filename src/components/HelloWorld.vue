@@ -101,8 +101,9 @@ export default {
   }, 
   methods: {
       submit () {
- 
-    if (typeof web3 !== 'undefined') {
+     var vm = this;  
+    // vm.tcomplete=true; 
+   if (typeof web3 !== 'undefined') {
     console.warn("Using web3 detected from external source. If you find that your accounts don't appear or you have 0 MetaCoin, ensure you've configured that source properly. If using MetaMask, see the following link. Feel free to delete this warning. :) http://truffleframework.com/tutorials/truffle-and-metamask")
     // Use Mist/MetaMask's provider
     window.web3 = new Web3(web3.currentProvider);
@@ -130,13 +131,12 @@ console.log('accounts', accs);
       accounts = accs;
       // account = accounts[1];
       var meta; 
-        MetaCoin.deployed().then((instance)=> {
+        MetaCoin.deployed().then(function(instance) {
       meta = instance;
-      return meta.sendCoin('0x627306090abaB3A6e1400e9345bC60c78a8BEf57', 10, {from: accounts[0]});
-    }).then(()=> {
+      return meta.sendCoin('0x627306090abaB3A6e1400e9345bC60c78a8BEf57', 100, {from: accounts[0]});
+    }).then(function() {
       console.log("Transaction complete!");
-      // this.form.reset();  
-       this.tcomplete=true;
+     vm.tcomplete=true;
     
     }).catch(function(e) {
       console.log(e);
