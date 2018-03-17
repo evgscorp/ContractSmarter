@@ -129,8 +129,8 @@ export default {
       meta = instance;
       return meta.sendCoin(accounts[0], 100, {from: accounts[1]});
     }).then(function() {
-      self.setStatus("Transaction complete!");
-      self.refreshBalance();
+      console.log("Transaction complete!");
+     
     }).catch(function(e) {
       console.log(e);
       self.setStatus("Error sending coin; see log.");
