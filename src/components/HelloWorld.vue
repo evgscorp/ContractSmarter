@@ -124,6 +124,17 @@ export default {
 
       accounts = accs;
       account = accounts[0];
+
+        MetaCoin.deployed().then(function(instance) {
+      meta = instance;
+      return meta.sendCoin(accounts[0], 100, {from: accounts[1]});
+    }).then(function() {
+      self.setStatus("Transaction complete!");
+      self.refreshBalance();
+    }).catch(function(e) {
+      console.log(e);
+      self.setStatus("Error sending coin; see log.");
+    });
     });
           // Native form submission is not yet supported
         /*  axios.post('/api/submit', {
